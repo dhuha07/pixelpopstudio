@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="icon" href="pixelpop.jpg" type="image/png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Pop Studio</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: { primary: "#000", accent: "#facc15" },
+        },
+      },
+    };
+  </script>
+
+  <!-- Basic fade‑in -->
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade-in { animation: fadeIn 1.5s ease-in forwards; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  </style>
+</head>
+<body class="bg-white text-black dark:bg-black dark:text-white">
+
+  <!-- Navbar -->
+  <nav class="fixed inset-x-0 top-0 bg-black text-white shadow z-50">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <a href="#" class="text-xl font-bold">Pixel Pop Studio</a>
+      <ul class="flex gap-4 text-sm">
+        <li><a href="#home" class="hover:text-accent">Home</a></li>
+        <li><a href="#about" class="hover:text-accent">Tentang Kami</a></li>
+        <li><a href="#portfolio" class="hover:text-accent">Portofolio</a></li>
+        <li><a href="layanan.html" class="hover:text-accent">Layanan</a></li>
+        <li><a href="#contact" class="hover:text-accent">Kontak</a></li>
+      </ul>
+      <button id="toggleDark" class="ml-4 text-sm">🌓</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="h-screen flex items-center justify-center bg-cover bg-center fade-in"
+           style="background-image:url('https://source.unsplash.com/1600x900/?film,studio');">
+    <div class="text-center px-4">
+      <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-xl">
+        Menghidupkan Imajinasi, Mewujudkan Cerita
+      </h1>
+      <a href="#portfolio"
+         class="mt-6 inline-block bg-accent text-black px-6 py-3 rounded hover:bg-yellow-300 font-semibold transition">
+        Lihat Portofolio
+      </a>
+    </div>
+  </section>
+
+  <!-- Tentang Kami -->
+  <section id="about" class="py-16 container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-6">Tentang Kami</h2>
+    <p class="text-lg">
+      Pixel Pop Studio adalah rumah produksi kreatif yang berfokus pada pembuatan short film, iklan,
+      dan konten visual dengan sentuhan sinematik yang kuat.
+    </p>
+  </section>
+
+  <!-- Portofolio -->
+  <section id="portfolio" class="py-16 bg-gray-100 dark:bg-gray-900 px-4">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Portofolio</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- card template (3×) -->
+        <div class="bg-white dark:bg-gray-800 rounded shadow hover:shadow-2xl overflow-hidden transform transition-transform duration-300 hover:-translate-y-3">
+          <img src="https://source.unsplash.com/400x300/?movie" alt="Film A" class="w-full" />
+          <div class="p-4">
+            <h3 class="font-semibold text-xl">Judul Film A</h3>
+            <p class="text-sm mb-2">Deskripsi singkat film.</p>
+            <a href="portofolio_a.html" target="_blank" class="text-accent hover:underline text-sm">Lihat Detail</a>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded shadow hover:shadow-2xl overflow-hidden transform transition-transform duration-300 hover:-translate-y-3">
+          <img src="https://source.unsplash.com/400x300/?cinema" alt="Film B" class="w-full" />
+          <div class="p-4">
+            <h3 class="font-semibold text-xl">Judul Film B</h3>
+            <p class="text-sm mb-2">Kisah visual mendalam tentang perjalanan karakter unik.</p>
+            <a href="portofolio_b.html" target="_blank" class="text-accent hover:underline text-sm">Lihat Detail</a>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded shadow hover:shadow-2xl overflow-hidden transform transition-transform duration-300 hover:-translate-y-3">
+          <img src="https://source.unsplash.com/400x300/?director" alt="Film C" class="w-full" />
+          <div class="p-4">
+            <h3 class="font-semibold text-xl">Judul Iklan C</h3>
+            <p class="text-sm mb-2">Kampanye iklan emosional dengan pendekatan sinematik.</p>
+            <a href="portofolio_c.html" target="_blank" class="text-accent hover:underline text-sm">Lihat Detail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri Video -->
+  <section id="galeri-video" class="py-16 container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-6 text-center">Galeri Video</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="relative w-full h-0 pb-[56.25%]">
+        <iframe class="absolute inset-0 w-full h-full rounded shadow" src="https://www.youtube.com/embed/ScMzIvxBSi4" title="YouTube video" allowfullscreen></iframe>
+      </div>
+      <div class="relative w-full h-0 pb-[56.25%]">
+        <iframe class="absolute inset-0 w-full h-full rounded shadow" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ringkasan Layanan -->
+  <section id="services" class="py-16 container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-6">Layanan Kami</h2>
+    <p class="text-lg mb-6">Kami menyediakan film pendek, iklan profesional, video musik, dll.</p>
+    <a href="layanan.html" class="inline-block bg-accent text-black px-6 py-3 rounded hover:bg-yellow-300 transition">
+      Lihat Semua Layanan
+    </a>
+  </section>
+
+  <!-- Kontak -->
+  <section id="contact" class="py-16 bg-gray-100 dark:bg-gray-900 px-4">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Kontak Kami</h2>
+
+      <form id="contactForm" class="grid gap-4 max-w-xl">
+        <input id="nama"  type="text"   placeholder="Nama"  class="p-3 border rounded dark:bg-gray-800" required />
+        <input id="email" type="email"  placeholder="Email" class="p-3 border rounded dark:bg-gray-800" required />
+        <textarea id="pesan" rows="4" placeholder="Pesan" class="p-3 border rounded dark:bg-gray-800" required></textarea>
+
+        <button type="submit" class="bg-black text-white py-3 px-6 rounded hover:bg-gray-800 transition">
+          Kirim Pesan
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-8 text-center">
+    <p>Pixel Pop Studio © 2025 — Creative Film Production House</p>
+    <div class="mt-2 space-x-4">
+      <a href="https://www.instagram.com/pixelpopstudio_?igsh=d2N2eDMwZXJrdzVn" target="_blank" class="hover:underline">Instagram</a>
+      <a href="#" class="hover:underline">YouTube</a>
+      <a href="mailto:info@pixelpopstudio.com" class="hover:underline">Email</a>
+    </div>
+  </footer>
+
+  <!-- Dark‑mode persistence -->
+  <script src="base.js"></script>
+
+  <!-- WhatsApp form handler + toggle -->
+  <script>
+    const waBase = "https://wa.me/qr/GIVEJWY2S2HXL1";
+    const defaultMsg = "saya tertarik dengan PIXEL POP Studio";
+
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nama  = document.getElementById("nama").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const pesan = document.getElementById("pesan").value.trim();
+
+      const msg =
+        `Halo Admin, ${defaultMsg}%0A` +
+        `Nama  : ${nama}%0A` +
+        `Email : ${email}%0A` +
+        `Pesan : ${pesan}`;
+
+      window.open(`${waBase}?text=${encodeURIComponent(msg)}`, "_blank");
+    });
+
+    document.getElementById("toggleDark").addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
+</body>
+</html>

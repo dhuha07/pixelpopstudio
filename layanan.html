@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layanan Kami – Pixel Pop Studio</title>
+  <link rel="icon" href="pixelpop.jpg" type="image/png" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { primary: '#000', accent: '#facc15' },
+          animation: { fade: 'fadeIn 1.5s ease-in-out forwards' },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0, transform: 'translateY(20px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' }
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>html{scroll-behavior:smooth}</style>
+</head>
+<body class="bg-black text-white font-sans transition-colors duration-500">
+
+  <!-- Header -->
+  <header class="bg-black text-white py-4 shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Pixel Pop Studio</h1>
+      <a href="pixelpop.html" class="text-accent hover:text-yellow-300 text-sm transition">
+        ← Kembali ke Beranda
+      </a>
+    </div>
+  </header>
+
+  <!-- Judul -->
+  <section class="text-center py-16 px-4 bg-gradient-to-b from-gray-900 via-black to-black animate-fade">
+    <h2 class="text-4xl font-extrabold mb-4">Layanan Kami</h2>
+    <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+      Pixel Pop Studio menghadirkan layanan produksi visual profesional, sinematik, dan berkarakter — cocok untuk
+      kebutuhan personal maupun korporat.
+    </p>
+  </section>
+
+  <!-- Grid Layanan -->
+  <section class="max-w-6xl mx-auto px-4 py-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade">
+    <div class="bg-gray-900 rounded-xl shadow hover:shadow-xl transform hover:scale-105 transition p-6">
+      <h3 class="text-xl font-semibold mb-2 text-accent">🎬 Short Film</h3>
+      <p class="text-sm text-gray-300">Produksi film pendek lengkap: ide cerita, shooting, hingga pasca-produksi.</p>
+    </div>
+    <div class="bg-gray-900 rounded-xl shadow hover:shadow-xl transform hover:scale-105 transition p-6">
+      <h3 class="text-xl font-semibold mb-2 text-accent">📺 Iklan Komersial</h3>
+      <p class="text-sm text-gray-300">Iklan TV dan digital yang memikat dengan storytelling kuat.</p>
+    </div>
+    <div class="bg-gray-900 rounded-xl shadow hover:shadow-xl transform hover:scale-105 transition p-6">
+      <h3 class="text-xl font-semibold mb-2 text-accent">🎵 Video Musik</h3>
+      <p class="text-sm text-gray-300">Visual artistik dan sinematik bagi musisi maupun label.</p>
+    </div>
+    <div class="bg-gray-900 rounded-xl shadow hover:shadow-xl transform hover:scale-105 transition p-6">
+      <h3 class="text-xl font-semibold mb-2 text-accent">📱 Konten Sosial Media</h3>
+      <p class="text-sm text-gray-300">Reels, TikTok, Shorts—konten singkat, menarik, dan sesuai tren.</p>
+    </div>
+    <div class="bg-gray-900 rounded-xl shadow hover:shadow-xl transform hover:scale-105 transition p-6">
+      <h3 class="text-xl font-semibold mb-2 text-accent">🏢 Video Profil Perusahaan</h3>
+      <p class="text-sm text-gray-300">Profil bisnis profesional & berkelas untuk mempertegas brand.</p>
+    </div>
+    <div class="bg-gray-900 rounded-xl shadow hover:shadow-xl transform hover:scale-105 transition p-6">
+      <h3 class="text-xl font-semibold mb-2 text-accent">🎥 Dokumenter & Reportase</h3>
+      <p class="text-sm text-gray-300">Dokumentasi kisah nyata atau acara dalam format dokumenter naratif.</p>
+    </div>
+  </section>
+
+  <!-- CTA WhatsApp -->
+  <section class="py-16 bg-black text-center animate-fade border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-4">Punya ide kreatif? Kami siap bantu mewujudkannya.</h2>
+    <a href="https://wa.me/qr/GIVEJWY2S2HXL1?text=saya%20tertarik%20dengan%20PIXEL%20POP%20Studio"
+       target="_blank"
+       class="inline-block bg-accent text-black font-semibold px-6 py-3 rounded hover:bg-yellow-300 transition">
+      Hubungi Kami
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-6 text-center text-sm border-t border-gray-800">
+    <p>© 2025 Pixel Pop Studio — Layanan Produksi Kreatif</p>
+    <div class="mt-2 space-x-4">
+      <a href="https://www.instagram.com/pixelpopstudio_?igsh=d2N2eDMwZXJrdzVn" target="_blank" class="hover:underline text-accent">Instagram</a>
+      <a href="#" class="hover:underline text-accent">YouTube</a>
+      <a href="mailto:info@pixelpopstudio.com" class="hover:underline text-accent">Email</a>
+    </div>
+  </footer>
+
+</body>
+</html>

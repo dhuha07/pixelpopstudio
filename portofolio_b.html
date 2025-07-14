@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio B ‑ Pixel Pop Studio</title>
+  <link rel="icon" href="pixelpop.jpg" type="image/png" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#000000',
+            accent: '#facc15',
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            fade: 'fadeIn 1.5s ease-in-out forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Alpine.js for interactivity -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Base theme persistence -->
+  <script src="base.js"></script>
+</head>
+<body class="bg-white text-gray-800 dark:bg-black dark:text-gray-100 transition-colors duration-500 font-sans">
+  <!-- Header -->
+  <header class="bg-black text-white py-4 shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Pixel Pop Studio</h1>
+      <div class="flex items-center gap-4">
+        <a href="pixelpop.html" class="text-yellow-400 hover:text-yellow-300 transition">← Beranda</a>
+        <button id="toggleDark" class="text-lg">🌓</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+    <img src="https://source.unsplash.com/1600x900/?film,camera" alt="Backdrop" class="absolute inset-0 w-full h-full object-cover object-center scale-110 md:scale-100" loading="lazy" />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent dark:from-black/80"></div>
+
+    <div x-data="{open:false}" class="relative z-10 text-center px-6 animate-fade">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">Portofolio B</h2
+      <p class="text-lg md:text-xl mt-4 text-gray-200 max-w-3xl mx-auto">Karya pendek yang mengangkat kisah perjuangan urban dengan visual sinematik.</p>
+      <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+        <button @click="open = true" class="px-6 py-3 bg-accent text-black font-semibold rounded shadow hover:bg-accent/90 transition">Tonton Trailer</button>
+        <a href="#detail" class="px-6 py-3 border border-accent text-accent rounded hover:bg-accent hover:text-black transition">Detail Proyek</a>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 inset-x-0 flex justify-center">
+        <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center items-start p-1 animate-pulse-slow">
+          <div class="w-2 h-2 bg-white rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- Trailer Modal -->
+      <div x-show="open" x-transition.opacity class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50" x-cloak>
+        <div class="bg-black rounded-lg overflow-hidden w-11/12 md:w-3/4 xl:w-1/2 max-h-[90vh] flex flex-col">
+          <video controls class="w-full max-h-[80vh] bg-black" preload="metadata">
+            <source src="trailer.mp4" type="video/mp4" />
+            Browser Anda tidak mendukung video HTML5.
+          </video>
+          <button @click="open = false" class="w-full py-3 text-center text-accent font-semibold bg-gray-900 hover:bg-gray-800">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detail Section -->
+  <section id="detail" class="py-20 bg-white dark:bg-black animate-fade">
+    <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+      <img src="https://source.unsplash.com/800x500/?film" alt="Portofolio B" class="rounded-xl shadow-xl transform hover:scale-105 transition" loading="lazy" />
+
+      <div>
+        <h3 class="text-3xl font-bold mb-4 text-black dark:text-white">Tentang Proyek</h3>
+        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+          Film pendek ini mengangkat tema perjuangan dan harapan dalam kehidupan urban. Dengan visual sinematik dan alur cerita emosional, Portofolio B menampilkan sinergi sempurna antara narasi dan estetika.
+        </p>
+
+        <div x-data="{open:false}">
+          <button @click="open = !open" class="flex items-center gap-2 text-accent font-medium mb-3 focus:outline-none">
+            <span x-text="open ? 'Sembunyikan Detail' : 'Lihat Detail Teknis'">Lihat Detail Teknis</span>
+            <svg :class="open ? 'rotate-180' : ''" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+
+          <ul x-show="open" x-transition class="list-disc list-inside space-y-2 text-gray-800 dark:text-gray-200">
+            <li><strong>Durasi:</strong> 12 Menit</li>
+            <li><strong>Genre:</strong> Drama Sosial</li>
+            <li><strong>Lokasi Syuting:</strong> Jakarta & Bandung</li>
+            <li><strong>Peran Kami:</strong> Penulisan naskah, produksi, sinematografi, penyuntingan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-6 mt-24 text-center text-sm">
+    <p>© 2025 Pixel Pop Studio. Semua Hak Dilindungi.</p>
+    <div class="mt-2 space-x-4">
+      <a href="https://www.instagram.com/pixelpopstudio_?igsh=d2N2eDMwZXJrdzVn" target="_blank" class="hover:underline">Instagram</a>
+      <a href="#" class="hover:underline">YouTube</a>
+      <a href="mailto:info@pixelpopstudio.com" class="hover:underline">Email</a>
+    </div>
+  </footer>
+</body>
+</html>
